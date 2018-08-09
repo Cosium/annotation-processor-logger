@@ -1,4 +1,4 @@
-package com.cosium.slf4j.annotation_processor;
+package com.cosium.logger.annotation_processor;
 
 import org.slf4j.ILoggerFactory;
 
