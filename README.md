@@ -18,7 +18,7 @@ A dedicated annotation processor SLF4J implementation which delegates logging to
 </dependency>
 ```
 
-2. Make your `javax.annotation.processing.Processor` extend `com.cosium.slf4j.annotation_processor.AbstractLoggingProcessor`
+2. Make your `javax.annotation.processing.Processor` extend `com.cosium.logging.annotation_processor.AbstractLoggingProcessor`
 
 ```java
 public class MyProcessor extends AbstractLoggingProcessor {
