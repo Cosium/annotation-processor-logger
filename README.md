@@ -1,4 +1,5 @@
 [![Travis branch](https://img.shields.io/travis/Cosium/annotation-processor-logger/master.svg)](https://travis-ci.org/Cosium/annotation-processor-logger)
+[![Codecov branch](https://img.shields.io/codecov/c/github/Cosium/annotation-processor-logger/master.svg)](https://codecov.io/gh/Cosium/annotation-processor-logger)
 [![Maven Central Latest](https://img.shields.io/maven-central/v/com.cosium.logging/annotation-processor-logger.svg)](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.cosium.logging%22%20AND%20a%3A%22annotation-processor-logger%22)
 
 # Annotation processor logger
