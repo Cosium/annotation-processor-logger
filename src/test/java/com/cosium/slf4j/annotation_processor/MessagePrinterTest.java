@@ -30,7 +30,9 @@ public class MessagePrinterTest {
     currentMessager = mock(Messager.class);
     messageBuilder = mock(MessageBuilder.class);
     when(messageBuilder.build(FORMAT, ARGUMENT)).thenReturn(MESSAGE);
-    tested = new MessagePrinter(() -> ofNullable(currentMessager), messageBuilder);
+    CurrentMessagerSupplier messagerSupplier = mock(CurrentMessagerSupplier.class);
+    when(messagerSupplier.get()).thenAnswer(invocationOnMock -> ofNullable(currentMessager));
+    tested = new MessagePrinter(messagerSupplier, messageBuilder);
   }
 
   @Test
