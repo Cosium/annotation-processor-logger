@@ -17,8 +17,8 @@ An annotation processor dedicated SLF4J implementation which delegates logging t
 2. Make your `javax.annotation.processing.Processor` extend `com.cosium.slf4j.annotation_processor.AbstractLoggingProcessor`
 
 ```java
-public class MyProcessor extends AbstractLoggingProcessor{
-    protected abstract boolean doProcess(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv){
+public class MyProcessor extends AbstractLoggingProcessor {
+    protected boolean doProcess(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         // Make the world a better place
     }
 }
