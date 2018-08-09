@@ -1,6 +1,6 @@
 # Annotation processor logger
 
-An SLF4J implementation for annotation processors which delegates logging to `javax.annotation.processing.Messager`.
+An annotation processor dedicated SLF4J implementation which delegates logging to `javax.annotation.processing.Messager`.
 
 ### Usage
 
