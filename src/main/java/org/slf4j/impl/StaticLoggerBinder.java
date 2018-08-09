@@ -1,6 +1,6 @@
 package org.slf4j.impl;
 
-import com.cosium.logger.annotation_processor.LoggerFactory;
+import com.cosium.logging.annotation_processor.LoggerFactory;
 import org.slf4j.ILoggerFactory;
 
 /**

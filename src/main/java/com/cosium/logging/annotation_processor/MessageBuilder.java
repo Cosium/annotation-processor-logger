@@ -1,4 +1,4 @@
-package com.cosium.logger.annotation_processor;
+package com.cosium.logging.annotation_processor;
 
 import org.slf4j.helpers.FormattingTuple;
 import org.slf4j.helpers.MessageFormatter;
