@@ -29,3 +29,21 @@ public class MyProcessor extends AbstractLoggingProcessor {
 ```
 
 3. Use SLF4J as usual
+
+### Enable all logging levels
+
+In the Maven project using your annotation processor, enable `showWarnings` in `maven-compiler-plugin`
+
+```xml
+<build>
+  <plugins>
+    <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <configuration>
+         <showWarnings>true</showWarnings>
+       </configuration>
+    </plugin>
+  </plugins>
+</build>
+```
