@@ -32,6 +32,8 @@ public class MyProcessor extends AbstractLoggingProcessor {
 
 ### Enable all logging levels
 
+##### Maven
+
 In the Maven project using your annotation processor, enable `showWarnings` in `maven-compiler-plugin`
 
 ```xml
