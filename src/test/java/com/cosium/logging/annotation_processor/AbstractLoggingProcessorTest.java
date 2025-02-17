@@ -1,19 +1,18 @@
 package com.cosium.logging.annotation_processor;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import javax.annotation.processing.Messager;
-import javax.annotation.processing.ProcessingEnvironment;
-import javax.annotation.processing.RoundEnvironment;
-import javax.lang.model.element.TypeElement;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicReference;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
+import javax.annotation.processing.Messager;
+import javax.annotation.processing.ProcessingEnvironment;
+import javax.annotation.processing.RoundEnvironment;
+import javax.lang.model.element.TypeElement;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created on 09/08/18.
@@ -27,7 +26,7 @@ public class AbstractLoggingProcessorTest {
   private Runnable processRunnable = () -> {};
   private Processor tested;
 
-  @Before
+  @BeforeEach
   public void before() {
     processingEnvironment = mock(ProcessingEnvironment.class);
     messager = mock(Messager.class);

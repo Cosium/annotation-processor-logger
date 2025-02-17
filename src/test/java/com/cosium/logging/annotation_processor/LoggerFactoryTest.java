@@ -1,9 +1,9 @@
 package com.cosium.logging.annotation_processor;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created on 09/08/18.
@@ -14,7 +14,7 @@ public class LoggerFactoryTest {
 
   private LoggerFactory tested;
 
-  @Before
+  @BeforeEach
   public void before() {
     tested = new LoggerFactory();
   }

@@ -1,11 +1,10 @@
 package com.cosium.logging.annotation_processor;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.assertj.core.api.Java6Assertions.assertThat;
 
 import java.io.PrintWriter;
-
-import static org.assertj.core.api.Java6Assertions.assertThat;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created on 09/08/18.
@@ -19,7 +18,7 @@ public class MessageBuilderTest {
 
   private MessageBuilder tested;
 
-  @Before
+  @BeforeEach
   public void before() {
     tested = new MessageBuilder(PRODUCER_NAME);
   }

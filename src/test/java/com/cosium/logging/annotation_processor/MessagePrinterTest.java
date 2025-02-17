@@ -1,13 +1,15 @@
 package com.cosium.logging.annotation_processor;
 
-import org.junit.Before;
-import org.junit.Test;
+import static java.util.Optional.ofNullable;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.when;
 
 import javax.annotation.processing.Messager;
 import javax.tools.Diagnostic;
-
-import static java.util.Optional.ofNullable;
-import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created on 09/08/18.
@@ -25,7 +27,7 @@ public class MessagePrinterTest {
 
   private MessagePrinter tested;
 
-  @Before
+  @BeforeEach
   public void before() {
     currentMessager = mock(Messager.class);
     messageBuilder = mock(MessageBuilder.class);

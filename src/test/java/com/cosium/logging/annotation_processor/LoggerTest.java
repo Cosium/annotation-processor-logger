@@ -1,12 +1,13 @@
 package com.cosium.logging.annotation_processor;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.reset;
+import static org.mockito.Mockito.verify;
 
 import javax.tools.Diagnostic;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created on 09/08/18.
@@ -26,7 +27,7 @@ public class LoggerTest {
   private MessagePrinter messagePrinter;
   private Logger tested;
 
-  @Before
+  @BeforeEach
   public void before() {
     messagePrinter = mock(MessagePrinter.class);
     tested = new Logger(messagePrinter);
