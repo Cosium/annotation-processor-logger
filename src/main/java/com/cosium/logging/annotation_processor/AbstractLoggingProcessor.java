@@ -1,12 +1,12 @@
 package com.cosium.logging.annotation_processor;
 
+import java.util.Optional;
+import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.TypeElement;
-import java.util.Optional;
-import java.util.Set;
 
 /**
  * Created on 09/08/18.
@@ -35,7 +35,7 @@ public abstract class AbstractLoggingProcessor extends AbstractProcessor {
     try {
       return doProcess(annotations, roundEnv);
     } finally {
-      CURRENT_MESSAGER.set(null);
+      CURRENT_MESSAGER.remove();
     }
   }
 

@@ -7,6 +7,7 @@ import static org.mockito.Mockito.verify;
 
 import javax.tools.Diagnostic;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -34,7 +35,8 @@ public class LoggerTest {
   }
 
   @Test
-  public void testAllLevelsEnabled() {
+  @DisplayName("All levels enabled")
+  public void test1() {
     assertThat(tested.isTraceEnabled()).isTrue();
     assertThat(tested.isDebugEnabled()).isTrue();
     assertThat(tested.isInfoEnabled()).isTrue();
@@ -43,7 +45,8 @@ public class LoggerTest {
   }
 
   @Test
-  public void testTrace() {
+  @DisplayName("Trace")
+  public void test2() {
     tested.trace(MSG);
     verify(messagePrinter).print(Diagnostic.Kind.OTHER, MSG);
     reset(messagePrinter);
@@ -66,7 +69,8 @@ public class LoggerTest {
   }
 
   @Test
-  public void testDebug() {
+  @DisplayName("Debug")
+  public void test3() {
     tested.debug(MSG);
     verify(messagePrinter).print(Diagnostic.Kind.OTHER, MSG);
     reset(messagePrinter);
@@ -89,7 +93,8 @@ public class LoggerTest {
   }
 
   @Test
-  public void testInfo() {
+  @DisplayName("Info")
+  public void test4() {
     tested.info(MSG);
     verify(messagePrinter).print(Diagnostic.Kind.NOTE, MSG);
     reset(messagePrinter);
@@ -112,7 +117,8 @@ public class LoggerTest {
   }
 
   @Test
-  public void testWarn() {
+  @DisplayName("Warn")
+  public void test5() {
     tested.warn(MSG);
     verify(messagePrinter).print(Diagnostic.Kind.WARNING, MSG);
     reset(messagePrinter);
@@ -135,7 +141,8 @@ public class LoggerTest {
   }
 
   @Test
-  public void testError() {
+  @DisplayName("Error")
+  public void test6() {
     tested.error(MSG);
     verify(messagePrinter).print(Diagnostic.Kind.ERROR, MSG);
     reset(messagePrinter);

@@ -7,7 +7,7 @@ import org.slf4j.ILoggerFactory;
  *
  * @author Reda.Housni-Alaoui
  */
-public class LoggerFactory implements ILoggerFactory {
+class LoggerFactory implements ILoggerFactory {
 
   private final CurrentMessagerSupplier messagerSupplier;
 

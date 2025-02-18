@@ -1,6 +1,6 @@
 package com.cosium.logging.annotation_processor;
 
-import static org.assertj.core.api.Java6Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.PrintWriter;
 import org.junit.jupiter.api.BeforeEach;
@@ -46,7 +46,7 @@ public class MessageBuilderTest {
         .isEqualTo(PRODUCER_NAME + " - Hello John\n" + STACK_TRACE);
   }
 
-  private class StubbedThrowable extends Throwable {
+  private static class StubbedThrowable extends Throwable {
 
     private final String stackTrace;
 

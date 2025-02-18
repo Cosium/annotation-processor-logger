@@ -12,6 +12,7 @@ import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.TypeElement;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -35,18 +36,23 @@ public class AbstractLoggingProcessorTest {
   }
 
   @Test
-  public void GIVEN_no_init_neither_current_round_WHEN_getmessager_THEN_empty_is_returned() {
+  @DisplayName("Given no init neither current round when getCurrentMessager then empty is returned")
+  public void test1() {
     assertThat(AbstractLoggingProcessor.getCurrentMessager()).isEmpty();
   }
 
   @Test
-  public void GIVEN_initialized_and_stopped_processor_WHEN_getmessager_THEN_empty_is_returned() {
+  @DisplayName(
+      "Given initialized and stopped processor when getCurrentMessager then empty is returned")
+  public void test2() {
     tested.init(processingEnvironment);
     assertThat(AbstractLoggingProcessor.getCurrentMessager()).isEmpty();
   }
 
   @Test
-  public void GIVEN_initialized_and_running_processor_WHEN_getmessager_THEN_messager_is_returned() {
+  @DisplayName(
+      "Given initialized and running processor when getCurrentMessager then messager is returned")
+  public void test3() {
     tested.init(processingEnvironment);
     AtomicReference<Messager> retrievedMessager = new AtomicReference<>();
     processRunnable =
@@ -56,15 +62,17 @@ public class AbstractLoggingProcessorTest {
   }
 
   @Test
-  public void GIVEN_initialized_and_runned_processor_WHEN_getmessager_THEN_empty_is_returned() {
+  @DisplayName("Given initialized and run processor when getCurrentMessager then empty is returned")
+  public void test4() {
     tested.init(processingEnvironment);
     tested.process(null, null);
     assertThat(AbstractLoggingProcessor.getCurrentMessager()).isEmpty();
   }
 
   @Test
-  public void
-      GIVEN_initialized_and_lastly_failed_round_processor_WHEN_getmessager_THEN_empty_is_returned() {
+  @DisplayName(
+      "Given initialized and lastly failed round processor when getCurrentMessager then empty is returned")
+  public void test5() {
     tested.init(processingEnvironment);
     tested.fail = true;
     assertThatThrownBy(() -> tested.process(null, null)).isInstanceOf(ExpectedFailure.class);
@@ -85,5 +93,5 @@ public class AbstractLoggingProcessorTest {
     }
   }
 
-  private class ExpectedFailure extends RuntimeException {}
+  private static class ExpectedFailure extends RuntimeException {}
 }

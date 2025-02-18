@@ -1,19 +1,18 @@
 package com.cosium.logging.annotation_processor;
 
-import org.slf4j.helpers.FormattingTuple;
-import org.slf4j.helpers.MessageFormatter;
+import static java.util.Objects.requireNonNull;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-
-import static java.util.Objects.requireNonNull;
+import org.slf4j.helpers.FormattingTuple;
+import org.slf4j.helpers.MessageFormatter;
 
 /**
  * Created on 09/08/18.
  *
  * @author Reda.Housni-Alaoui
  */
-public class MessageBuilder {
+class MessageBuilder {
 
   private final String producerName;
 

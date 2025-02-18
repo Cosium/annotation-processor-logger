@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 import javax.annotation.processing.Messager;
 import javax.tools.Diagnostic;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -38,14 +39,16 @@ public class MessagePrinterTest {
   }
 
   @Test
-  public void GIVEN_no_current_messager_WHEN_print_THEN_it_does_nothing() {
+  @DisplayName("Given no current messager when print then it does nothing")
+  public void test1() {
     currentMessager = null;
     tested.print(Diagnostic.Kind.OTHER, "hello", "john");
     verifyNoMoreInteractions(messageBuilder);
   }
 
   @Test
-  public void WHEN_print_THEN_it_print_message_using_the_messager() {
+  @DisplayName("When print then it print message using the messager")
+  public void test2() {
     tested.print(Diagnostic.Kind.OTHER, FORMAT, ARGUMENT);
     verify(currentMessager).printMessage(Diagnostic.Kind.OTHER, MESSAGE);
   }

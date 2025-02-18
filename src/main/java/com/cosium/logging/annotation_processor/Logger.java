@@ -1,17 +1,16 @@
 package com.cosium.logging.annotation_processor;
 
-import org.slf4j.helpers.MarkerIgnoringBase;
+import static java.util.Objects.requireNonNull;
 
 import javax.tools.Diagnostic;
-
-import static java.util.Objects.requireNonNull;
+import org.slf4j.helpers.MarkerIgnoringBase;
 
 /**
  * Created on 09/08/18.
  *
  * @author Reda.Housni-Alaoui
  */
-public class Logger extends MarkerIgnoringBase {
+class Logger extends MarkerIgnoringBase {
 
   private final MessagePrinter messagePrinter;
 

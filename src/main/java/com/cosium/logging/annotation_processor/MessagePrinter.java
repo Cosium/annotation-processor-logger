@@ -7,7 +7,7 @@ import javax.tools.Diagnostic;
  *
  * @author Reda.Housni-Alaoui
  */
-public class MessagePrinter {
+class MessagePrinter {
 
   private final CurrentMessagerSupplier messagerSupplier;
   private final MessageBuilder messageBuilder;
